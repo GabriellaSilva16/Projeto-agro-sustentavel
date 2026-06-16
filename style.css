@@ -1,0 +1,230 @@
+/* --- Configurações Gerais e Cores Frias --- */
+:root {
+    --bg-primary: #f4f7f6;
+    --bg-secondary: #ffffff;
+    --bg-dark: #1f2d3d;
+    --text-main: #334e68;
+    --text-light: #627d98;
+    --accent-color: #243b53;
+    --cold-green: #48bb78;
+    --cold-teal: #2c7a7b;
+    --font-size-base: 16px;
+}
+
+/* Classes para Alto Contraste via JavaScript */
+body.high-contrast {
+    --bg-primary: #000000;
+    --bg-secondary: #121212;
+    --bg-dark: #ffffff;
+    --text-main: #ffffff;
+    --text-light: #ffff00;
+    --accent-color: #ffff00;
+    --cold-green: #00ff00;
+    --cold-teal: #00ffff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: var(--font-size-base);
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg-primary);
+    color: var(--text-main);
+    line-height: 1.6;
+    transition: background 0.3s, color 0.3s;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section {
+    padding: 60px 0;
+}
+
+.bg-alt {
+    background-color: var(--bg-secondary);
+}
+
+.text-center {
+    text-align: center;
+}
+
+/* --- Barra de Acessibilidade --- */
+.accessibility-bar {
+    background-color: var(--bg-dark);
+    padding: 8px var(--container);
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+.accessibility-bar button {
+    background: transparent;
+    border: 1px solid var(--bg-primary);
+    color: var(--bg-primary);
+    padding: 4px 12px;
+    cursor: pointer;
+    border-radius: 4px;
+    font-weight: bold;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 0.85rem;
+}
+
+.accessibility-bar button:hover, 
+.accessibility-bar button:focus {
+    background-color: var(--cold-teal);
+    color: #fff;
+    outline: none;
+}
+
+/* --- Cabeçalho e Menu --- */
+header {
+    background-color: var(--bg-secondary);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+}
+
+.logo h1 {
+    color: var(--accent-color);
+    font-size: 1.5rem;
+}
+
+.logo span {
+    color: var(--cold-teal);
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--text-main);
+    font-weight: 600;
+    transition: color 0.2s;
+}
+
+nav a:hover {
+    color: var(--cold-teal);
+}
+
+/* --- Hero Banner --- */
+.hero {
+    background: linear-gradient(rgba(36, 59, 83, 0.7), rgba(44, 122, 123, 0.7)), 
+                url('https://images.unsplash.com/photo-1516253593875-bd7ba052fbc5?auto=format&fit=crop&w=1200&q=80') no-repeat center center/cover;
+    height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #ffffff;
+    padding: 0 20px;
+}
+
+.hero-content h2 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin: 0 auto 30px;
+}
+
+.btn-main {
+    display: inline-block;
+    background-color: var(--cold-teal);
+    color: #ffffff;
+    padding: 12px 30px;
+    text-decoration: none;
+    border-radius: 25px;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+.btn-main:hover {
+    background-color: var(--accent-color);
+}
+
+/* --- Cards de Práticas --- */
+.grid-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.card {
+    background-color: var(--bg-primary);
+    padding: 30px;
+    border-radius: 8px;
+    border-left: 5px solid var(--cold-teal);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+}
+
+.card h3 {
+    margin-bottom: 15px;
+    color: var(--accent-color);
+}
+
+/* --- Galeria de Imagens --- */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    margin-top: 40px;
+}
+
+.gallery-item {
+    background-color: var(--bg-secondary);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    display: block;
+    filter: saturate(0.8) hue-rotate(10deg); /* Ajuste leve para puxar tons frios */
+}
+
+.caption {
+    padding: 15px;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* --- Rodapé --- */
+footer {
+    background-color: var(--bg-dark);
+    color: #fff;
+    padding: 30px 0;
+    margin-top: 40px;
+}
